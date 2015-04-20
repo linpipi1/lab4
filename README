@@ -1,0 +1,32 @@
+
+	A.
+	compile:
+		g++ -o A A.cpp
+	execute:
+		nm A
+	output:
+		double average(double * n1, double & n2):
+			0000000000400624 T _Z7averagePdRd
+		int average(int n1, float n2):
+			0000000000400652 T _Z7averageif
+		int main():
+			000000000040067a T main
+	
+
+	B.
+	compile:
+		g++ -o B B.cpp
+	execute:
+		./B
+	output:
+		1 8
+		4 8
+		4 8
+		8 8
+		第一直排是指不同type佔的空間不同
+		char:	1 Byte
+		int:	4 Byte
+		float:	4 Byte
+		double:	8 Byte
+		第二直排的數字是指在64位元的電腦中，pointer是 8 Byte
+
